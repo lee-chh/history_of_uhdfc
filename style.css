@@ -1,0 +1,385 @@
+@font-face {
+    font-family: 'SF_HambakSnow';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HambakSnow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header {
+    position: relative;  /* 상대 위치로 설정해서 이미지 위치 조정 */
+    display: flex;
+    align-items: center; /* 텍스트와 이미지를 수평으로 정렬 */
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    flex-direction: column;
+    gap: 20px;
+}
+
+#image-container {
+    display: flex;
+    position: absolute;  /* 텍스트 옆에 이미지를 절대 위치로 배치 */
+    left: 0%;  /* 텍스트 오른쪽에 배치 */
+    top: 120%;
+    gap: 10px;  /* 이미지 간 간격 */
+}
+
+#image-container img {
+    height: 30px; /* 이미지 크기 조정 */
+    width: auto;
+}
+
+body {
+    color: #fff;
+    font-family: 'SF_HambakSnow', sans-serif; /* 폰트 적용 */
+    font-weight: 300;
+    background-color: gray;
+}
+
+
+h4 {
+    margin-top :10px;
+    font-weight: 100;
+}
+#parallax__title {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    position: fixed;
+    left: 30px;
+    top: 30px;
+    z-index: 1000;
+}
+#parallax__title h1 {
+    font-size: 30px;
+    border-bottom: 1px dashed #fff;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    font-weight: 400;
+    display: inline-block;
+}
+#parallax__title p {
+    font-size: 16px;
+}
+.title__flex {
+    display: flex;
+    align-items: center; /* 수직 중앙 정렬 */
+    justify-content: flex-start; /* 왼쪽으로 정렬 */
+    gap: 10px; /* 간격을 조정하여 너무 많은 여백이 생기지 않도록 설정 */
+}
+
+#p {
+    background-image: url('assets/svg/1983.svg');
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75vw;
+    height: 75vh;
+    z-index: -1;
+    transition: background-image 0.5s ease-in-out;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+}
+
+#parallax__nav {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 1000;
+    background-color: rgba(0,0,0,0.4);
+    padding: 10px 10px;
+    border-radius: 50px;
+    text-align: center;
+}
+#parallax__nav li {
+    list-style: none;
+    display: inline;
+    position: relative;
+}
+#parallax__nav li a {
+    display: inline-block;
+    width: 80px; 
+    height: 20px;
+    padding: 5px;
+    text-align: center;
+    line-height: 20px;
+    transition: all 0.3s;
+    position: relative
+}
+
+#parallax__nav li a:hover {
+    color: #000;;
+}
+
+#parallax__nav li a:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4); /* 반투명 원 */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#parallax__nav li a.active {
+    background: #fff;
+    color: #000;
+    border-radius: 30px;
+
+}
+
+#parallax__nav.is-active li a {
+    width: 30px; 
+}
+
+/* parallax__cont */
+#parallax__cont {
+    max-width: 1600px;
+    width: 98%;
+    margin: 0 auto;
+}
+.parallax__item {
+    width: 500px;
+    max-width: 70vw;
+    margin: 44vw auto;
+    text-align: left;
+    margin-right: 0;
+    position: relative;
+    padding-top: 15vw;
+    padding-bottom: 10px;
+}
+
+.parallax__item__num {
+    font-size: 20vw;
+    position: absolute;
+    left: -5vw;
+    top: -5vw;
+    opacity: 0.37;
+    font-family: "Lato";
+    font-weight: 100;
+}
+
+.parallax__item__title {
+    padding-bottom: 5px;
+    font-weight: 100;
+}
+.parallax__item__imgWrap {
+    width: 500px;
+    height: auto;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+}
+.parallax__item__img {
+    position: absolute;
+    left: 0%; 
+    top: 0%;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    filter: saturate(0%);
+    transition: all 1s;
+}
+.parallax__item__img:hover {
+    filter: saturate(100%);
+    transform: scale(1.025);
+}
+
+#notice {
+    position: absolute;
+
+}
+
+#section0 {
+    height: 100vh;
+    width: 100vw;
+    padding-top: 25vh;
+    background-color: #DEDEDE;
+    display: block;
+    text-align: center;
+    background-image: url(assets/svg/tiger.png);
+    background-size: 100vh;
+    background-repeat: no-repeat;
+    background-position: 70vw 0vh;
+}
+
+#section0 h1 {
+    font-size: 50px;
+    color:#183E85;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+}
+
+#section0 h2 {
+    font-size: 40px;
+    color: #F0B555;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+}
+
+#section0 h3 {
+    font-size: 30px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+}
+
+#section0 img {
+    display: inline-block;
+    margin: 25px;
+    max-width: 100px; /* 이미지 크기 제한 */
+}
+
+/* 전체 스타일 */
+#section0 {
+    text-align: center;
+    position: relative; /* 화살표 위치를 절대값으로 설정하기 위해 */
+}
+
+/* V 텍스트 스타일 */
+.scroll-arrow {
+    font-family: arial;
+    font-weight: lighter;
+    font-size: 30px; /* V의 크기 */
+    animation: scrollDown 1s infinite; /* 애니메이션 설정 */
+    text-shadow: none;
+}
+
+/* 애니메이션: 아래로 내려가면서 사라짐 */
+@keyframes scrollDown {
+    0% {
+        transform: translateY(0); /* 처음 위치 */
+        opacity: 1; /* 처음에 보임 */
+    }
+    100% {
+        transform: translateY(20px); /* 더 아래로 내려감 */
+        opacity: 0; /* 완전히 사라짐 */
+    }
+}
+
+#section1 .parallax__item__img {
+    background-image: url(assets/img/1983.jpeg);
+}
+#section2 .parallax__item__img {
+    background-image: url(assets/img/1996.webp);
+}
+#section3 .parallax__item__img {
+    background-image: url(assets/img/2005.jpg);
+}
+#section4 .parallax__item__img {
+    background-image: url(assets/img/2012.jpg);
+}
+#section5 .parallax__item__img {
+    background-image: url(assets/img/2017.jpg);
+}
+#section6 .parallax__item__img {
+    background-image: url(assets/img/2020.jpg);
+}
+#section7 .parallax__item__img {
+    background-image: url(assets/img/2022.jpg);
+}
+#section8 .parallax__item__img {
+    background-image: url(assets/img/2023.jpg);
+}
+#section9 .parallax__item__img {
+    background-image: url(assets/img/2024.jpg);
+}
+.image {
+    position: absolute;  /* 절대 위치 */
+    left: -45vw;  /* 왼쪽 끝 */
+    top: 50%;  /* 화면 세로 중앙에 배치 */
+    transform: translateY(-50%);  /* 세로로 정확하게 중앙 정렬 */
+    width: 15vw;  /* 원하는 크기로 조정 (여기서는 15vw로 설정) */
+    height: auto;  /* 비율에 맞게 높이 자동 조정 */
+    z-index: 10;  /* 다른 요소 위에 표시되도록 설정 */
+}
+#section10 {
+    height: 20vh;
+    width: 100vw;
+    background-color: #000;
+}
+.parallax__item__desc {
+    font-size: 3vw;
+    line-height: 1.4;
+    margin-top: -5vw;
+    margin-left: 0;
+    z-index: 100;
+    position: relative;
+}
+/* 깜빡이는 텍스트 */
+.blink-text {
+    font-size: 18px;
+    font-family: lato;
+    color: #fff;
+    text-align: center;
+    animation: blink 1.5s infinite;
+    position: fixed;
+    bottom: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 깜빡이 효과 애니메이션 */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* end box */
+#endbox {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #394cff;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    z-index: 9999;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+}
+#endbox h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 0 10px;
+    font-size: 24px;
+}
+.image-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.image-links a {
+    display: inline-block;
+}
+.image-links img {
+    height: 5vh;
+    width: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.image-links img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
